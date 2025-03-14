@@ -20,3 +20,9 @@ app.get('/pets', (req, res) => {
       res.json(petNames);
     })
 });
+
+app.get('/food', (req, res) => {
+  knex('food_type')
+    .select('*')
+    .then(food => res.json(food))
+});
